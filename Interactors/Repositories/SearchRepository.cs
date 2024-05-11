@@ -1,11 +1,6 @@
 ﻿using InfoTrack.Data.Data;
 using InfoTrack.Data.Models;
 using InfoTrack.Interactors.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InfoTrack.Interactors.Repositories
 {

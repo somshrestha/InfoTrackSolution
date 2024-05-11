@@ -23,12 +23,12 @@ namespace InfoTrack.Api.Controllers
             {
                 var result = await _searchService.Search(dto);
 
-                return Ok(result);
+                return result == null ? NotFound() : Ok(result);
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                return BadRequest(ex.Message);
             }
         }
     }

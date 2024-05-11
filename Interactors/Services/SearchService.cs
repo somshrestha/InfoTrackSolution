@@ -3,6 +3,7 @@ using InfoTrack.Data.Interfaces;
 using InfoTrack.Data.Models;
 using InfoTrack.Interactors.Interfaces;
 using InfoTract.Helpers;
+using InfoTract.Helpers.ExceptionHandler;
 using System.Text.RegularExpressions;
 
 namespace InfoTrack.Interactors.Services
@@ -20,30 +21,40 @@ namespace InfoTrack.Interactors.Services
 
         public async Task<SearchResultDto> Search(SearchDto dto)
         {
-            var searchUrl = $"http://www.google.co.uk/search?num={Constants.DefaultNumberOfSearchResults}&q={dto.SearchTerm}";
+            var dtoEntity = new SearchResultDto();
 
-            var response = await _httpClient.GetStringAsync(searchUrl);
+            var searchUrl = $"{Constants.baseUrlAddress}/search?num={Constants.DefaultNumberOfSearchResults}&q={dto.SearchTerm}";
 
-            var results = GetResults(response, dto.Url);
-
-            var searchResult = new SearchResult
+            try
             {
-                Url = dto.Url,
-                SearchTerm = dto.SearchTerm,
-                Ranking = string.Join(", ", results),
-                SearchDate = DateTime.UtcNow
-            };
+                var response = await _httpClient.GetStringAsync(searchUrl);
 
-            await _searchRepository.AddAsync(searchResult);
+                var results = GetResults(response, dto.Url);
 
-            var dtoEntity = searchResult.Convert();
+                var searchResult = new SearchResult
+                {
+                    Url = dto.Url,
+                    SearchTerm = dto.SearchTerm,
+                    Ranking = string.Join(", ", results),
+                    SearchDate = DateTime.UtcNow
+                };
+
+                await _searchRepository.AddAsync(searchResult);
+
+                dtoEntity = searchResult.Convert();
+
+            }
+            catch (Exception ex)
+            {
+                throw new SearchException("Something went wrong while searching", ex);
+            }
 
             return dtoEntity;
         }
 
         private List<string> GetResults(string response, string url)
         {
-            var regex = "href\\s*=\\s*(?:[\"'](?<1>[^\"']*)[\"']|(?<1>\\S+))";
+            var regex = Constants.UrlRegex;
 
             var linksFound = Regex.Matches(response, regex, RegexOptions.IgnoreCase);
 
