@@ -1,4 +1,9 @@
 using InfoTrack.Data.Data;
+using InfoTrack.Data.Interfaces;
+using InfoTrack.Data.Models;
+using InfoTrack.Interactors.Interfaces;
+using InfoTrack.Interactors.Repositories;
+using InfoTrack.Interactors.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,16 +22,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpClient<SearchService>();
+builder.Services.AddScoped<ISearchService, SearchService>();
+builder.Services.AddScoped<ISearchRepository, SearchRepository>();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
-//////
-//app.UseStatusCodePages();
-//app.UseExceptionHandler();
 app.UseCors("AllowSpecificOrigin");
-//
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

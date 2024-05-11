@@ -1,16 +1,35 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using InfoTrack.Api.Dtos;
+using InfoTrack.Data.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace InfoTrack.Api.Controllers
 {
     [ApiController]
-    [Route("search")]
+    [Route("[controller]")]
     public class SearchController : ControllerBase
     {
-        [HttpGet]
-        [Route("all")]
-        public ActionResult<string> GetAll()
+        private readonly ISearchService _searchService;
+
+        public SearchController(ISearchService searchService)
         {
-            return Ok("Tests");
+            _searchService = searchService;
+        }
+
+        [HttpPost]
+        [Route("GetSearchResult")]
+        public async Task<IActionResult> GetSearchResult([FromBody] SearchDto dto)
+        {
+            try
+            {
+                var result = await _searchService.Search(dto);
+
+                return Ok(result);
+                
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

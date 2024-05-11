@@ -17,6 +17,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InfoTrack.Data\InfoTrack.Data.csproj" />
+    <ProjectReference Include="..\InfoTract.Helpers\InfoTract.Helpers.csproj" />
+    <ProjectReference Include="..\Interactors\InfoTrack.Interactors.csproj" />
   </ItemGroup>
 
 </Project>
