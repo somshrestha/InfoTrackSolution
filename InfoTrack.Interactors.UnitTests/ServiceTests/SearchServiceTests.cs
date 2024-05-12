@@ -1,10 +1,8 @@
 ﻿using InfoTrack.Api.Dtos;
-using InfoTrack.Data.Data;
 using InfoTrack.Data.Models;
 using InfoTrack.Interactors.Interfaces;
 using InfoTrack.Interactors.Services;
 using InfoTract.Helpers.ExceptionHandler;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using Moq.Protected;
 using System.Net;
