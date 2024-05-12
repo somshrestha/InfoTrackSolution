@@ -1,6 +1,7 @@
 ﻿using InfoTrack.Data.Data;
 using InfoTrack.Data.Models;
 using InfoTrack.Interactors.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace InfoTrack.Interactors.Repositories
 {
@@ -18,6 +19,13 @@ namespace InfoTrack.Interactors.Repositories
             await _context.SearchResults.AddAsync(searchResult);
 
             await _context.SaveChangesAsync();
+        }
+
+        public async Task<IList<SearchResult>> GetAllSearchHistory()
+        {
+            return await _context.SearchResults
+                            .OrderByDescending(sr => sr.SearchDate)
+                            .ToListAsync();
         }
     }
 }

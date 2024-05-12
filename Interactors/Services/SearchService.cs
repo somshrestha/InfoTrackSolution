@@ -52,6 +52,13 @@ namespace InfoTrack.Interactors.Services
             return dtoEntity;
         }
 
+        public async Task<IList<SearchResultDto>> GetAllSearchHistory()
+        {
+            var results = await _searchRepository.GetAllSearchHistory();
+
+            return results.Select(r => r.Convert()).ToList();
+        }
+
         private List<string> GetResults(string response, string url)
         {
             var regex = Constants.UrlRegex;

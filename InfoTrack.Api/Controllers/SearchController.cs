@@ -31,5 +31,22 @@ namespace InfoTrack.Api.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet]
+        [Route("GetAllSearchHistory")]
+        public async Task<IActionResult> GetAllSearchHistory()
+        {
+            try
+            {
+                var result = await _searchService.GetAllSearchHistory();
+
+                return result.Count == 0 ? NotFound() : Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

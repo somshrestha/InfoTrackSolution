@@ -5,5 +5,6 @@ namespace InfoTrack.Data.Interfaces
     public interface ISearchService
     {
         Task<SearchResultDto> Search(SearchDto dto);
+        Task<IList<SearchResultDto>> GetAllSearchHistory();
     }
 }
