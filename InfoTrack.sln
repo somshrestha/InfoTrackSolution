@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoTract.Helpers", "InfoTr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrack.Api.UnitTests", "InfoTrack.Api.UnitTests\InfoTrack.Api.UnitTests.csproj", "{B0F1347D-DD58-43FA-B95C-EE67D787D525}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrack.Interactors.UnitTests", "InfoTrack.Interactors.UnitTests\InfoTrack.Interactors.UnitTests.csproj", "{D8F04D17-9B8F-4F76-A498-BB678175C42D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B0F1347D-DD58-43FA-B95C-EE67D787D525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0F1347D-DD58-43FA-B95C-EE67D787D525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0F1347D-DD58-43FA-B95C-EE67D787D525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8F04D17-9B8F-4F76-A498-BB678175C42D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8F04D17-9B8F-4F76-A498-BB678175C42D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8F04D17-9B8F-4F76-A498-BB678175C42D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8F04D17-9B8F-4F76-A498-BB678175C42D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

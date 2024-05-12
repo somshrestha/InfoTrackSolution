@@ -31,6 +31,16 @@ namespace InfoTrack.Api.UnitTests.SearchControllerTests
         }
 
         [TestMethod]
+        public async Task GetSearchResult_ShouldCall_ServiceMethod()
+        {
+            // Act
+            await _controller.GetSearchResult(_dto);
+
+            // Assert
+            _mockSearchService.Verify(service => service.Search(It.IsAny<SearchDto>()), Times.Once);
+        }
+
+        [TestMethod]
         public async Task GetSearchResult_ShouldReturn_ExpectedResult()
         {
             // Arrange
@@ -47,10 +57,26 @@ namespace InfoTrack.Api.UnitTests.SearchControllerTests
 
             // Act
             var actualResult = await _controller.GetSearchResult(_dto);
-            var okResult = actualResult as OkObjectResult;
+            var okResult = actualResult;
 
             // Assert
             Assert.IsNotNull(okResult);
+            Assert.IsTrue(okResult is OkObjectResult);
+        }
+
+        [TestMethod]
+        public async Task GetSearchResult_ShouldReturn_ServiceMethod()
+        {
+            // Arrange==
+            _mockSearchService.Setup(x => x.Search(It.IsAny<SearchDto>()))
+                .ReturnsAsync((SearchResultDto)null);
+
+            // Act
+            var actualResult = await _controller.GetSearchResult(_dto);
+            var notFoundResult = actualResult;
+
+            // Assert
+            Assert.IsTrue(notFoundResult is NotFoundResult);
         }
     }
 }
