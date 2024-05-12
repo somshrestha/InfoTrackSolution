@@ -5,11 +5,13 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoTrack.Api", "InfoTrack.Api\InfoTrack.Api.csproj", "{274B2467-D6FA-42F4-879B-DB5269448543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrack.Data", "InfoTrack.Data\InfoTrack.Data.csproj", "{6E36244A-9A2F-44EF-8602-EAF64D5041E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoTrack.Data", "InfoTrack.Data\InfoTrack.Data.csproj", "{6E36244A-9A2F-44EF-8602-EAF64D5041E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrack.Interactors", "Interactors\InfoTrack.Interactors.csproj", "{4014CD8E-43BD-443A-9E51-7E6BADAA6365}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoTrack.Interactors", "Interactors\InfoTrack.Interactors.csproj", "{4014CD8E-43BD-443A-9E51-7E6BADAA6365}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTract.Helpers", "InfoTract.Helpers\InfoTract.Helpers.csproj", "{9A930871-0B8B-4F1B-9960-142AD241385A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfoTract.Helpers", "InfoTract.Helpers\InfoTract.Helpers.csproj", "{9A930871-0B8B-4F1B-9960-142AD241385A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoTrack.Api.UnitTests", "InfoTrack.Api.UnitTests\InfoTrack.Api.UnitTests.csproj", "{B0F1347D-DD58-43FA-B95C-EE67D787D525}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{9A930871-0B8B-4F1B-9960-142AD241385A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A930871-0B8B-4F1B-9960-142AD241385A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A930871-0B8B-4F1B-9960-142AD241385A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0F1347D-DD58-43FA-B95C-EE67D787D525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F1347D-DD58-43FA-B95C-EE67D787D525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F1347D-DD58-43FA-B95C-EE67D787D525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F1347D-DD58-43FA-B95C-EE67D787D525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
