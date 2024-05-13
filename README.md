@@ -1,6 +1,6 @@
-**Project Setup**
+# Project Setup
 
-**API**
+## API
 
 - Make sure .Net 8.0 and SQL Express are installed
 - Open InfoTrack.sln in Visual Studio
@@ -8,7 +8,7 @@
 - Select InfoTrack.Api and please select http to run the api
 - ![image](https://github.com/somshrestha/InfoTrackSolution/assets/16788255/20074568-870f-4c63-b96e-b02a244625cf)
 
-**Improvements**
+## Improvements
 
 - Authentication on the system
 - Using Cryptography encryption for the ids to make it encrypted on the UI so that the system will not be vulnerable against SQL injection.
