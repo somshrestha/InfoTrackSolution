@@ -1,11 +1,11 @@
-Project Setup
+**Project Setup**
 
-API
+**API**
 
-Make sure .Net 8.0 and SQL Express are installed
-Open InfoTrack.sln in Visual Studio
-In Package Manager Console, type “Update-Database” to create the database
-Select InfoTrack.Api and please select http to run the api
+- Make sure .Net 8.0 and SQL Express are installed
+- Open InfoTrack.sln in Visual Studio
+- In Package Manager Console, type “Update-Database” to create the database
+- Select InfoTrack.Api and please select http to run the api
 ![image](https://github.com/somshrestha/InfoTrackSolution/assets/16788255/20074568-870f-4c63-b96e-b02a244625cf)
 
 Improvements
